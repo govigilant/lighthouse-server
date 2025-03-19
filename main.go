@@ -92,6 +92,6 @@ func runLighthouse(req Request) {
 
 func main() {
 	http.HandleFunc("/lighthouse", handler)
-	fmt.Println("Server started on :8080")
-	http.ListenAndServe(":8080", nil)
+	fmt.Println("Server started on :80")
+	http.ListenAndServe(":80", nil)
 }

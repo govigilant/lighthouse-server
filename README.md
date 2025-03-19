@@ -8,7 +8,7 @@ It will run Lighthouse and return the result via HTTP.
 ### Running the container
 
 ```bash
-docker run -p 8080:8080 -d ghcr.io/govigilant/lighthouse-server:latest
+docker run -p 8080:80 -d ghcr.io/govigilant/lighthouse-server:latest
 ```
 
 ### Running Lighthouse
