@@ -1,9 +1,10 @@
-FROM golang:1.24
+FROM golang:1.24-alpine
 
-RUN apt update && apt install -y curl && \
-	curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
-	apt install -y nodejs chromium && \
-	npm install -g lighthouse
+RUN apk add --no-cache curl nodejs npm chromium
+
+ENV CHROME_PATH=/usr/bin/chromium-browser
+
+RUN npm install -g lighthouse
 
 WORKDIR /app
 

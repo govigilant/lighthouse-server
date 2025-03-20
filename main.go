@@ -58,7 +58,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func runLighthouse(req Request) {
-	cmd := exec.Command("lighthouse", req.Website, "--quiet", "--chrome-flags=--headless", "--output=json", "--output-path=report.json")
+	cmd := exec.Command("lighthouse", req.Website, "--quiet", "--chrome-flags=--headless --no-sandbox --disable-dev-shm-usage --disable-gpu", "--output=json", "--output-path=report.json")
 	fmt.Println("Running Lighthouse for", req.Website)
 	if err := cmd.Run(); err != nil {
 		fmt.Println("Error running Lighthouse:", err)
